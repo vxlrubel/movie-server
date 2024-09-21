@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root{
+    --hue: 188;
+    --saturation: 91%;
+    --lightness: 51%;
+    --color-primary: hsl(var(--hue), var(--saturation), var(--lightness));
+    --color-white: hsl(0, 0%, 100%);
+    --color-dark: hsl(0, 0%, 47%);
+    --border-color-lightness: 89%;
+    --border-color: hsl(210, 14%, var(--border-color-lightness));
+    --padding-side: 1.125rem;
+    --input-field-gap: 1.125rem;
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+body{
+    background-color: var(--color-white);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-dark);
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+#app{
+    min-height: 100dvh;
+    overflow: hidden;
+}
+.server-frame{
+    width: 100%;
+    height: 100dvh;
+}
+.login-form{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100dvh;
+    padding: var(--padding-side);
+}
+.login-form::after{
+    position: absolute;
+    content: '';
+    z-index: -1;
+    inset: 0;
+    background-image: linear-gradient(
+    45deg,
+    hsl(240deg 100% 20%) 0%,
+    hsl(281deg 100% 21%) 8%,
+    hsl(304deg 100% 23%) 17%,
+    hsl(319deg 100% 30%) 25%,
+    hsl(329deg 100% 36%) 33%,
+    hsl(336deg 100% 41%) 42%,
+    hsl(346deg 83% 51%) 50%,
+    hsl(3deg 95% 61%) 58%,
+    hsl(17deg 100% 59%) 67%,
+    hsl(30deg 100% 55%) 75%,
+    hsl(40deg 100% 50%) 83%,
+    hsl(48deg 100% 50%) 92%,
+    hsl(55deg 100% 50%) 100%
+  );
+}
+.login-title{
+    margin-bottom: var(--input-field-gap);
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+.form-inner-field {
+    background-color: #fff;
+    width: clamp(20.5rem, 25rem, 30rem);
+    padding: 2rem;
+    border: 2px solid var(--border-color);
+    border-radius: 1rem;
+    input {
+        display: flex;
+        align-items: center;
+        height: 2.5rem;
+        width: 100%;
+        color: var(--color-dark);
+        outline: 0;
+        border: 2px solid var(--border-color);
+        padding-inline: var(--padding-side);
+        :not(:last-child)&{
+            margin-bottom: var(--input-field-gap);
+        }
+        :focus&{
+            border-color: var(--color-primary);
+        }
+    }
+
+    .submit{
+        background-image: linear-gradient(
+            45deg,
+            hsl(240deg 100% 20%) 0%,
+            hsl(281deg 100% 21%) 8%,
+            hsl(304deg 100% 23%) 17%,
+            hsl(319deg 100% 30%) 25%,
+            hsl(329deg 100% 36%) 33%,
+            hsl(336deg 100% 41%) 42%,
+            hsl(346deg 83% 51%) 50%,
+            hsl(3deg 95% 61%) 58%,
+            hsl(17deg 100% 59%) 67%,
+            hsl(30deg 100% 55%) 75%,
+            hsl(40deg 100% 50%) 83%,
+            hsl(48deg 100% 50%) 92%,
+            hsl(55deg 100% 50%) 100%
+        );
+        color: var(--color-white);
+        border: none !important;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1.125rem;
+    }
+    
+}
+
+.author-content{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    top: 0;
+    left: 0;
+    width: 255px;
+    z-index: 10;
+    padding-inline: 10px;
+    background-color: var(--color-white);
+    font-weight: 500;
+    font-size: 1.125rem;
+    color: #35276d;
+}
+@media(min-width: 768px){
+    .author-content{
+        background-color: #2ce6e6;
+    }
+}
+@media(min-width:768px){
+    .author-content{
+        padding-inline: 20px;
+    }
+}
+.author-content > .thumb {
+	width: 50px;
+	aspect-ratio: 1 / 1;
+	background: #eee;
+	padding: .8rem;
+	border-radius: 50%;
+}
+.author-content button{
+    padding: 22px 10px;
+    border: none;
+    outline: 0;
+    box-shadow: none;
+    background-color: transparent;
+    font-size: 1.125rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #35276d;
+}

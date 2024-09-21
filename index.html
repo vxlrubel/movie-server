@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue CDN Project</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <script src="./assets/js/vue.global.prod.js"></script>
+
+</head>
+<body>
+  <div id="app">
+    <nav v-if="isAuthenticated">
+        <iframe src="http://10.16.100.244/" frameborder="0" class="server-frame"></iframe>
+    </nav>
+
+    
+    <div class="author-content" v-if="isAuthenticated">
+        <div class="thumb">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/>
+            </svg>
+        </div>
+        <div>
+            Test 1
+        </div>
+        <button @click.prevent="logout" class="logout">Logout</button>
+    </div>
+    
+
+    <!-- Login Form -->
+    <form v-if="!isAuthenticated" @submit.prevent="login" class="login-form">
+        <div class="form-inner-field">
+            <h2 class="login-title">Login Form</h2>
+            <input type="email" v-model="email" placeholder="Enter email" required>
+            <input type="password" v-model="password" placeholder="Enter password" required>
+            <input type="submit" value="Login" class="submit">
+        </div>
+    </form>
+    
+  </div>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>
